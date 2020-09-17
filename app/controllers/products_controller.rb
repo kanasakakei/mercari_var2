@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @images = Image.new
     @product = Product.new
     @product.images.build()
     @product.build_category
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
       # end
       redirect_to root_path
     else
-      render action: :new
+      render "new"
     end
   end
 

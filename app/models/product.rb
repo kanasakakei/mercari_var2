@@ -20,4 +20,7 @@ class Product < ApplicationRecord
   validates :name, length: { maximum: 40}
   validates :description_of_item , length: { maximum: 1000}
   validates :price, numericality: {only_integer:true, greater_than:299, less_than:10000000}
+  validates_associated :images
+  validates :images, presence: true
+
 end

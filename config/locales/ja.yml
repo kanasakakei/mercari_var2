@@ -4,6 +4,7 @@ ja:
       prduct: 商品
       category: カテゴリー
       prefecture: 発送元の地域
+      images: 画像
     attributes:
       product:
         name: 商品名
@@ -12,7 +13,9 @@ ja:
         shipping_charges: 配送料の負担
         days_until_shipping: 発送までの日数
         price: 販売価格
-      
+        images: 画像
+        category: カテゴリー
+        prefecture: 発送元の地域
       category:
         name: カテゴリー
     errors:

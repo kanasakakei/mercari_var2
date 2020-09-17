@@ -13,7 +13,7 @@
 
         
         .items
-          = f.fields_for :images do |i|
+          = f.fields_for :images, @product.images.build do |i|
             = i.label :image, class: "putitems__image--input" do
               = i.file_field :image, multiple: "true",type: 'file',name: "product[images_attributes][][image]",class: "putitems-image"
               = image_tag asset_path('material/icon/icon-camera_2.png'), class: "putitems__image--input-camera"
