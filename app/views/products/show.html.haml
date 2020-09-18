@@ -17,7 +17,7 @@
             %tr
               %th 出品者
               %td
-                = @product.user.nickname
+                -# = @product.user_id.nickname
                 = @product.user_id
                 .category__icon
                   .category__icon__box
@@ -78,20 +78,7 @@
               = link_to new_product_contract_path(@product), class: "purchase" do
                 購入画面へ進む
         %p.itemMain__comment
-          ご覧頂きありがとうございます。
-      
-          バーバリー ブルーレーベル Tシャツ メンズ M
-      
-          サイドのバーバリー柄がかわいいです。
-          写真ではネイビーに見えますが、黒です。
-          
-          気に入っていたため色褪せあります。
-          
-          中古品、自宅保管品のため、ご理解頂ける方のみご購入くださいませ。
-          
-          小さく折り畳んで梱包、発送させて頂きます。
-          
-          ☆ご不明点はコメントをお願い致します
+          = @product.description_of_item
           .btn
             .btn__report.clearfix
               .btn__report__left

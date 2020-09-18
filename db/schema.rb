@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2020_08_15_080110) do
     t.index ["product_id"], name: "fk_rails_d9e2e7cf99"
   end
 
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credits_on_user_id"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "product_id"
@@ -111,6 +120,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_080110) do
   add_foreign_key "cards", "users"
   add_foreign_key "contracts", "products"
   add_foreign_key "contracts", "users", column: "buyer_id"
+  add_foreign_key "credits", "users"
   add_foreign_key "images", "products"
   add_foreign_key "products", "users"
 end

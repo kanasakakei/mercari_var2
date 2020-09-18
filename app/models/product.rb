@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :brand
   # belongs_to :exhibition_history
-  belongs_to :user
+  # belongs_to :user
   has_many :images, dependent: :destroy
 
   accepts_nested_attributes_for :images , allow_destroy: true
